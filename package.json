@@ -6,10 +6,10 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "nodemon ./start.js"
+    "start": "nodemon ./server"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "server/**/*.{js}": [
       "standard --parser babel-eslint --fix",
       "git add"
     ]
