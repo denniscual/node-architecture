@@ -9,7 +9,7 @@
     "start": "nodemon ./server"
   },
   "lint-staged": {
-    "*.js": [
+    "server/*.js": [
       "standard --fix",
       "git add"
     ]
