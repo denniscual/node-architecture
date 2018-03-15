@@ -9,8 +9,8 @@
     "start": "nodemon ./server"
   },
   "lint-staged": {
-    "./server/**/*.{js}": [
-      "standard --parser babel-eslint --fix",
+    "*.js": [
+      "standard --fix",
       "git add"
     ]
   },
