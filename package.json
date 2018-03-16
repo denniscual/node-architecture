@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "nodemon ./server"
+    "start": "nodemon ./start"
   },
   "lint-staged": {
     "server/*.js": [

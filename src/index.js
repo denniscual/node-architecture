@@ -18,8 +18,8 @@ exports.default = app
  * Create simple application using Clean Architecture. The job of app is to save user using REST API then save the data to memory.
  *
  * Rule of thumb:
- * - Our business rules should work and testable even without interacting to external services. Business should not depend or doesn't know anything to outside layers.
- * Make sure we follow the Dependencry Rule Principles - The flow of dependency towards Higher lever layers. Infrastructure -----> Interface Adapter -----> Use Case ---------> Entity
+ *  Our business rules should work and testable even without interacting to external services. Business should not depend or doesn't know anything to outside layers.
+ *  Make sure we follow the Dependencry Rule Principles - The flow of dependency towards Higher lever layers. Infrastructure -----> Interface Adapter -----> Use Case ---------> Entity
  *
  * TODO:
  * - Create Entity (Critical Business rules)
