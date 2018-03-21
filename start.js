@@ -1,4 +1,6 @@
-const app = require('./src/04-infrastructure/webserver')
+const app = require('./src/infra/http')
+
+// start the database
 
 // start the server
 app.start()
