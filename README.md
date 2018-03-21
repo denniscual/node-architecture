@@ -1,6 +1,6 @@
 ## Software Architecture: Case Study
 
-A case study for developing [Software Architecture](https://drive.google.com/file/d/1xM-lPAUOm37Q3ht6kgeQ97xelw0l5jj9/view?usp=sharing) to create a software which complies the layer of abstraction.
+> A case study for developing [Software Architecture](https://drive.google.com/file/d/1xM-lPAUOm37Q3ht6kgeQ97xelw0l5jj9/view?usp=sharing) to create a software which complies the important layers of abstraction.
 
 ### Pros
 - Bussiness rules is not tightly coupled to any infrastructure. It is independent and easy to test.
