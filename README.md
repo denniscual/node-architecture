@@ -13,6 +13,15 @@
 ### Cons
 - Lots of code needs unlike in typical project.
 
+### TODO
+- [x] Research about software architecture. Read about some of the famous SA.
+- [x] Create diagram showing the software architecture which we created.
+- [x] Create sample project that implements the software architecture
+- [x] Add project structure
+- [ ] Test the architecture by adding modules to each layer. We create first the services layer
+- [ ] Add test to services layer
+- [ ] Add infrastructure layer
+
 ### Setup for this sample project
 - Install eslint globally.
 - Install eslint for standard.
