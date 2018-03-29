@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "nodemon ./start"
+    "start": "nodemon ./src/services/users.js"
   },
   "lint-staged": {
     "server/*.js": [
@@ -17,6 +17,8 @@
   "dependencies": {
     "awilix": "^3.0.6",
     "express": "^4.16.3",
+    "ramda": "^0.25.0",
+    "validator": "^9.4.1",
     "winston": "^2.4.1"
   },
   "devDependencies": {

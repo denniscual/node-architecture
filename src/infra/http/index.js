@@ -11,6 +11,6 @@ app.get(
 exports.start = () =>
   app
     .listen(
-      3000,
-      () => console.log('App listening to port 3000!')
+      4000,
+      () => console.log('App listening to port 4000!')
     )
