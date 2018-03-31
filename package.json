@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "nodemon ./src/services/users.js"
+    "start": "nodemon ./src/services/users.js --exec babel-node",
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js"
   },
   "lint-staged": {
     "server/*.js": [
@@ -17,12 +19,16 @@
   "dependencies": {
     "awilix": "^3.0.6",
     "express": "^4.16.3",
+    "fluture": "^8.0.2",
     "ramda": "^0.25.0",
     "validator": "^9.4.1",
     "winston": "^2.4.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2017": "^6.24.1",
     "eslint": "^4.1.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-config-standard": "^11.0.0",
