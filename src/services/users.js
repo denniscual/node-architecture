@@ -45,14 +45,6 @@ const validateUser = ({username, email, firstName, lastName}) => {
   }
 }
 
-// User repository for accessing the user data store.
-const userRepository = {
-  create: (user) =>
-    new Future((rej, res) => {
-      rej('Error caught when trying to save the user.')
-    })
-}
-
 /**
  * TODO: Add test spec.
  * validateUser :: Object(User) -> Object
@@ -62,7 +54,7 @@ const userRepository = {
  * @param {Object} userRepository Repository for accessing the user data store.
  * @return {Future} Future either resolve or rejected.
  */
-export const createUser = ({
+const createUser = ({
   user,
   userRepository
 }) => {
@@ -72,25 +64,14 @@ export const createUser = ({
   if (isValid) {
     return userRepository
       .create(user)
-      // TODO: Use Either library coming from the folktale - https://github.com/folktale/data.either
-      // instead of returning for Future for the handlers that we passed, handlers should return an Either type.
       .bimap(errorResponse, successfulResponse('Successfully add user.'))
   }
 
   // else
-  return errorResponse(errors)
+  return Future.reject(errorResponse(errors))
 }
 
-// invoke createUser
-createUser({
-  user: {
-    username: 'irishjane',
-    email: 'irishjane@gmail.com',
-    firstName: 'Irish jane',
-    lastName: 'Bulangis-Cual'
-  },
-  userRepository
-}).fork(
-  console.error,
-  console.log
-)
+// export all services for the user.
+export default {
+  createUser
+}

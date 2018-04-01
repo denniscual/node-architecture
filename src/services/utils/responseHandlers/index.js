@@ -2,9 +2,7 @@
  * TODO: Add test spec.
  * Library for handling response handlers.
  */
-
 import { curry } from 'ramda'
-import Future from 'fluture'
 
 /**
  * successfulResponse :: String -> Object -> Future
@@ -12,11 +10,11 @@ import Future from 'fluture'
  * Create a succesfull response based on the given doc and message
  * @param {String} message
  * @param {Object} doc
- * @return {Future}
+ * @return {Object}
  */
 export const successfulResponse = curry(
   (message, doc) =>
-    Future.of({
+    ({
       status: 'successfully',
       message,
       doc
@@ -28,10 +26,9 @@ export const successfulResponse = curry(
  *
  * Create a succesfull response based on the given doc and message
  * @param {String | Object} error Object or string which tells the error.
- * @return {Future}
+ * @return {Object}
  */
-export const errorResponse = (error) =>
-  Future.reject({
-    status: 'error',
-    message: error
-  })
+export const errorResponse = (error) => ({
+  status: 'error',
+  message: error
+})

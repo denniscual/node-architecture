@@ -1,16 +1,34 @@
-// TODO: Check the implementation of express app in ddd-node-app-boilerplate - https://github.com/joshuaalpuerto/node-ddd-boilerplate
-const express = require('express')
-const app = express()
+import express from 'express'
+import router from './routers'
+import bodyParser from 'body-parser'
 
-app.get(
-  '/',
-  (req, res) => res.send('Hello World!')
-)
+/**
+ * server :: Object -> Object
+ *
+ * Create app server which is running to node.js environment.
+ * @param {Object} dependencies
+ * @return {Object} Instance of app server.
+ */
+const server = ({config, database}) => {
+  // create an instance of app.
+  const app = express()
 
-// start the server.
-exports.start = () =>
-  app
-    .listen(
-      4000,
-      () => console.log('App listening to port 4000!')
-    )
+  // Config
+  app.disable('x-powered-by')
+  // Middlewares
+  // parse application/x-www-form-urlencoded
+  app.use(bodyParser.urlencoded({ extended: false }))
+  // parse application/json
+  app.use(bodyParser.json())
+  // inject the database dependency to our router.
+  app.use('/api', router({database}))
+  // we define our static folder
+  app.use(express.static('public'))
+
+  return {
+    start: () =>
+      app.listen(3000, () => console.log('Example app listening on port 3000!'))
+  }
+}
+
+export default server
