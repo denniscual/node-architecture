@@ -10,6 +10,8 @@ const db = database()
 // app server.
 const app = http({database: db})
 
-// running our app server and access our database.
-db.start()
-app.start()
+// we need to export the instance of our db and app. Invoke those infrastructure to our start file which is resided on our root project.
+export default {
+  dbStart: db.start,
+  appStart: app.start
+}

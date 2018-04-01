@@ -1,6 +1,6 @@
-const app = require('./src/infra/http')
+import app from './src/container'
 
 // start the database
-
+app.dbStart()
 // start the server
-app.start()
+app.appStart()
