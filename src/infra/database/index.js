@@ -1,8 +1,8 @@
-import { userRepository } from './users'
+import User from './users'
 
 const database = () => {
   return {
-    userRepository,
+    User,
     start: () => console.log('Running our database.')
   }
 }

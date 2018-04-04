@@ -56,7 +56,8 @@ const validateUser = ({username, email, firstName, lastName}) => {
  */
 const createUser = ({
   user,
-  userRepository
+  userRepository,
+  sendEmail
 }) => {
   // validate the the user data.
   const { errors, isValid } = validateUser(user)
@@ -64,7 +65,8 @@ const createUser = ({
   if (isValid) {
     return userRepository
       .create(user)
-      .bimap(errorResponse, successfulResponse('Successfully add user.'))
+      .chain(sendEmail)
+      .bimap(errorResponse, successfulResponse('Successfully! We sent an email verification.'))
   }
 
   // else

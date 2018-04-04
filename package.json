@@ -21,6 +21,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "fluture": "^8.0.2",
+    "immutable": "v4.0.0-rc.9",
     "ramda": "^0.25.0",
     "validator": "^9.4.1",
     "winston": "^2.4.1"

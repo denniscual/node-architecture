@@ -4,10 +4,10 @@ import Future from 'fluture'
  * userRepository :: Function -> Object
  *
  * User repository handles action for accessing the datasource.
- * @param {Model} Model
+ * @param {Model} User
  * @param {Future}
  */
-const userRepository = (Model) => ({
+const userRepository = (User) => ({
   create (user) {
     return new Future((reject, resolve) => {
       // Fake implementation.
@@ -16,7 +16,7 @@ const userRepository = (Model) => ({
   },
   getUserByID (userID) {
     return new Future((reject, resolve) => {
-      Model
+      User
         .findOneById(userID)
         .then(resolve)
         .catch(reject)

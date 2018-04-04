@@ -8,14 +8,13 @@ import userRouter from './users'
  * @param {Object} dependencies
  * @return {Object} API router.
  */
-const router = ({database}) => {
+const router = ({database, emailProvider}) => {
   // main router
   const apiRouter = Router()
-  // destructure the database.
-  const { userRepository } = database
-
+  // destructure the database. Get the User model
+  const { User } = database
   // inject the user routers.
-  apiRouter.use('/users', userRouter({userRepository}))
+  apiRouter.use('/users', userRouter({emailProvider, User}))
 
   return apiRouter
 }

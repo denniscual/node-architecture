@@ -8,11 +8,11 @@ import userController from '../../../interfaces/controllers/users'
  * @param {Object} dependencies
  * @return {Object} User router.
  */
-const userRouter = ({userRepository}) => {
+const userRouter = ({emailProvider, User}) => {
   // create instance of Router
   const userRouter = Router()
   // inject the userRepository to our userController.
-  const { createUser } = userController(userRepository)
+  const { createUser } = userController({emailProvider, User})
 
   // Routes
   userRouter.post('/', createUser)

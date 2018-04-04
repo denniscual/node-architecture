@@ -1,9 +1,5 @@
-import User from './model'
-import repository from './repository'
+// Create model in here and return it.
+// Fake User model
+const User = {}
 
-const userRepository = repository(User)
-
-export {
-  User as default,
-  userRepository
-}
+export default User

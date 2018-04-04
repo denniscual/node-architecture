@@ -1,5 +1,4 @@
 import express from 'express'
-import router from './routers'
 import bodyParser from 'body-parser'
 
 /**
@@ -9,7 +8,7 @@ import bodyParser from 'body-parser'
  * @param {Object} dependencies
  * @return {Object} Instance of app server.
  */
-const server = ({config, database}) => {
+const server = ({config, apiRouter}) => {
   // create an instance of app.
   const app = express()
 
@@ -21,7 +20,7 @@ const server = ({config, database}) => {
   // parse application/json
   app.use(bodyParser.json())
   // inject the database dependency to our router.
-  app.use('/api', router({database}))
+  app.use('/api', apiRouter)
   // we define our static folder
   app.use(express.static('public'))
 
